@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mo-fit</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <!------
+    header-start 
+    ------->
+
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                <img src="/static/images/logo.png" alt="" style="width: 170px; height: 50px;">
+              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+            </a>
+    
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            </ul>
+    
+            <div class="text-end">
+              <a href="\signin"><button type="button" class="btn btn-outline-light me-2">Login</button></a>
+              <a href="\"><button type="button" class="btn btn-warning">Home</button></a>
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <!------
+    header-ends 
+    ------->
+
+    <!------
+    form-starts
+    ------>
+      
+    <section class="main_heading my-5"> 
+        <div class="text-center">
+            <h1 class="display-4">Enter Your Email Address</h1>
+            <hr class="w-25 mx-auto"></hr>
+        </div>
+      
+        <div class="container">
+          <div class="col-xxl-8 col-10 col-md-8 mx-auto my-5"> 
+            <form action="/id_check" method="POST">
+                <div class="mb-3">
+                  <label for="validationDefaultUsername" class="form-label">Email Id (Please Enter Same Email at the time of Filling signup Details)</label>
+                  <div class="input-group">
+                    <!-- <span class="input-group-text" id="inputGroupPrepend2">@</span> -->
+                    <input type="email" class="form-control" name="id_check_email" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                  </div>
+                </div>
+                
+                <div class="col-12 d-flex justify-content-center align-items-center">
+                  <button class="btn btn-info" type="submit" style="margin: 5px;">Submit</button>
+                </div>
+              </form>
+          </div>
+        </div>
+    </section>
+
+    <!------
+    form-ends
+    ------>
+
+    <h5 class="card-title d-flex justify-content-center align-items-center flex-column" style="color: red;">{{id_check_error}}</h5>
+    <h5 class="card-title d-flex justify-content-center align-items-center flex-column" style="color: red;">{{token_status}}</h5>
+
+    <script>
+        function signin(){
+            window.location.replace("signin");
+        }
+    </script>
+
+</body>
+</html>
